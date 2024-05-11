@@ -1,0 +1,54 @@
+.sidebar {
+    position: fixed;
+    left: 100%;
+    top: 60px;
+    width: 300px; /* Increased width for better layout */
+    height: calc(100% - 60px);
+    background-color: #f4f4f9; /* Softer background color */
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3); /* Softer shadow */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px; /* Increased padding */
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-out; /* Smoother transition */
+}
+
+.sidebar-header {
+    width: 100%; /* Full width to use space efficiently */
+    height: 200px; /* Increased height for better visual impact */
+    border-bottom: 2px solid #ccc; /* Thicker border for better separation */
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+.button {
+    background-color: #007bff; /* Vibrant button color */
+    color: white; /* Text color for readability */
+    padding: 10px 20px; /* More padding for a better button size */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.ParkingImage {
+    padding-top: 24px;
+}
+
+.ParkingSpot{
+    padding-top: 24px;
+}
+
+.Parking_name{
+    padding-top: 24px;
+}
+
+.Button{
+    margin-top: 24px;
+    width: 6rem;
+    font-size: 70px;
+}

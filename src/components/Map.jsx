@@ -5,7 +5,7 @@ const Map = ({data, setSidebarData, setShowSidebar}) => {
   const center = [41.327953,19.819025]
 
 return (
-    <MapContainer center={center} zoom={13} style={{ width: '100%', height: 'calc( 100vh - 60px )',borderRadius:8}}>
+    <MapContainer center={center} zoom={13} style={{ width: '100%', height: 'calc( 100vh - 60px )',borderRadius:8}} zoomControl={false}>
       <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

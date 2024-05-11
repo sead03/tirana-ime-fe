@@ -2,36 +2,75 @@
   box-sizing: border-box;
 }
 
-* {
+body, html {
   margin: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-input, button, textarea, select {
-  font: inherit;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
 #root, #__next {
   isolation: isolate;
+  height: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: red; /* Deep green */
+  color: white;
+  padding: 0.5rem 1rem;
+  height: 60px;
+}
+
+.main-container {
+  display: flex;
+  height: calc(100% - 60px); /* Full height minus navbar */
+}
+
+.sidebar1 {
+  background-color: #FFFFFF;
+  width: 250px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  overflow: hidden;
+  z-index: 1000;
+  position: relative;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  padding: 10px;
+  background-color: #E0E0E0;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.sidebar-stats {
+  padding: 10px;
+}
+
+.map-container {
+  flex-grow: 1;
+  position: relative;
 }
 
 
-.navbar{
-  display: flex;
-  justify-content: space-between;
+img, picture, video, canvas, svg, input, button, textarea, select, p, h1, h2, h3, h4, h5, h6 {
+  display: block;
+  max-width: 100%;
+  font: inherit;
+  overflow-wrap: break-word;
+}
+
+
+.Img1{
+  background-color: #FFFFFF;
+}
+
+.Img21{
   background-color: red;
-  padding: 1rem;
-  height: 60px;
 }
