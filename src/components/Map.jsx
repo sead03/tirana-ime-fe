@@ -16,7 +16,14 @@ return (
             mouseout: (event) => event.target.closePopup(),
             click: () => {setShowSidebar(true);setSidebarData(parkings)}
           }}>
-          <Popup>{parkings.parking_name}</Popup>
+          <Popup>
+            <div>
+                {parkings.parking_name}
+                <div>Total Spaces: {parkings.total_spaces}</div>
+                <div>Free Spaces: {parkings.free_spaces}</div>
+            </div>
+
+          </Popup>
         </Marker>
       ))}
     </MapContainer>
