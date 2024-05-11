@@ -19,6 +19,9 @@ const Sidebar = ({ data,setShowSidebar,setSidebarData }) => {
         <li className="list-group-item">Free spaces: <strong>{data.free_spaces}</strong></li>
         <li className="list-group-item">Occupied spaces: <strong>{data.occupied_spaces}</strong></li>
         </ul>
+        <ul className="list-group pt-4" >
+        <li  className="list-group-item">Spaces: <strong>{data.spaces.space_id} {data.is_free} </strong></li>
+        </ul>
       <button className='Button btn mb-3 mr-3 btn-danger' onClick={handleClick}>Close</button>
     </div>
   );

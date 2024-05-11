@@ -3,58 +3,35 @@ import 'leaflet/dist/leaflet.css';
 import Map from './components/Map';
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
+import parkingdata from './components/parkingdata';
 
 function App() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [sidebarData, setSidebarData] = useState(null);
+  const [parkings, setParkings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const data = [
-      {
-        parking_id: 1,
-        parking_name: "Bashkia Parking",
-        street_name: "Bajram Curri Boulevard",
-        total_spaces: 100,
-        free_spaces: 45,
-        occupied_spaces: 55,
-        lon: 19.819590,
-        lat: 41.331049,
-        spaces: [
-          {space_id: 1, is_free: true},
-          {space_id: 2, is_free: true},
-          {space_id: 3, is_free: false}
-        ]
-      },
-      {
-        parking_id: 2,
-        parking_name: "Wilson Parking",
-        street_name: "Wilson Square",
-        total_spaces: 80,
-        free_spaces: 25,
-        occupied_spaces: 55,
-        lon: 19.815862,
-        lat: 41.322780,
-        spaces: [
-          {space_id: 1, is_free: false},
-          {space_id: 2, is_free: true},
-          {space_id: 3, is_free: false}
-        ]
-      },
-      {
-        parking_id: 3,
-        parking_name: "Grand Park Parking",
-        street_name: "Rruga e Elbasanit",
-        total_spaces: 120,
-        free_spaces: 80,
-        occupied_spaces: 40,
-        lon: 19.816964,
-        lat: 41.320478,
-        spaces: [
-          {space_id: 1, is_free: true},
-          {space_id: 2, is_free: true},
-          {space_id: 3, is_free: true}
-        ]
-      }
-    ]
+ const endpoint = () => {
+    fetch('http://localhost:8000/api/parkings/')  
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setParkings(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  };  
+
+
+  
 
     const handleMapClick = (data) => {
       setSidebarData(data);
@@ -71,7 +48,7 @@ function App() {
     <div className="main-container">
         {sidebarData && <Sidebar data={sidebarData} setShowSidebar={setShowSidebar} setSidebarData={setSidebarData} />}
       <div className="map-container">
-      <Map data={data} setSidebarData={setSidebarData} setShowSidebar={setShowSidebar}/>
+      <Map data={parkingdata} setSidebarData={setSidebarData} setShowSidebar={setShowSidebar}/>
       
       </div>
     </div>
