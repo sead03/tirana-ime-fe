@@ -2,7 +2,7 @@
     position: fixed;
     left: 100%;
     top: 60px;
-    width: 300px; /* Increased width for better layout */
+    width: 500px; 
     height: calc(100% - 60px);
     background-color: #f4f4f9; /* Softer background color */
     box-shadow: 2px 0 8px rgba(0,0,0,0.3); /* Softer shadow */
@@ -35,16 +35,8 @@
     background-color: #0056b3; /* Darker shade on hover */
 }
 
-.ParkingImage {
-    padding-top: 24px;
-}
-
-.ParkingSpot{
-    padding-top: 24px;
-}
-
 .Parking_name{
-    padding-top: 24px;
+    padding-top: 8px;
 }
 
 .Button{
